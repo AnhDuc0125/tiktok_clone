@@ -7,6 +7,10 @@
   --gray-text-color: #161823bf;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -15,4 +19,5 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 1.6rem;
   line-height: 1.5;
+  text-rendering: optimizeSpeed;
 }
