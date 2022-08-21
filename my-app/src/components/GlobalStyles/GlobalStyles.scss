@@ -26,3 +26,14 @@ body {
   line-height: 1.5;
   text-rendering: optimizeSpeed;
 }
+
+button,
+input {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+a {
+  text-decoration: none;
+}
