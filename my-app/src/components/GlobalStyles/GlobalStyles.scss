@@ -50,6 +50,11 @@ html {
   font-size: 62.5%;
 }
 
+//hide scrollbar
+::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   font-family: 'VL Proxima Nova Rg';
   font-size: 1.6rem;

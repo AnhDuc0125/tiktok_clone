@@ -5,11 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './Header.module.scss';
-import images from '~/assets/images';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 import Menu from '~/components/Menu';
+import * as Icon from '~/components/Icons';
 
 const cx = classNames.bind(styles);
 
@@ -18,16 +18,16 @@ function Header() {
 
   const MENU_ITEM = [
     {
-      icon: <img src={images.language} alt="" />,
+      icon: <Icon.LanguageIcon />,
       title: 'English',
     },
     {
-      icon: <img src={images.feedback} alt="" />,
+      icon: <Icon.FeedbackIcon />,
       title: 'Feedback and help',
       to: '/feedback',
     },
     {
-      icon: <img src={images.keyboard} alt="" />,
+      icon: <Icon.KeyboardIcon />,
       title: 'Keyboard shortcuts',
     },
   ];
@@ -36,7 +36,7 @@ function Header() {
     <header className={cx('wrapper')}>
       <div className={cx('inner')}>
         <div className={cx('logo')}>
-          <img src={images.logo} alt="Tiktok Logo" />
+          <Icon.Logo></Icon.Logo>
         </div>
         <div>
           <Tippy
@@ -60,11 +60,11 @@ function Header() {
                 spellCheck={false}
               />
               <button className={cx('clear')}>
-                <img src={images.times} alt="" />
+                <Icon.TimesIcon />
               </button>
-              <img className={cx('spinner')} src={images.loading} alt="" />
+              <Icon.LoadingIcon />
               <button className={cx('search-btn')}>
-                <img src={images.search} alt="Search" />
+                <Icon.SearchIcon></Icon.SearchIcon>
               </button>
             </div>
           </Tippy>
@@ -79,7 +79,9 @@ function Header() {
           </Button>
           <Button filled>Log in</Button>
           <Menu data={MENU_ITEM}>
-            <img className={cx('more-icon')} src={images.more} alt="" />
+            <div className={cx('more-icon')}>
+              <Icon.MoreIcon />
+            </div>
           </Menu>
         </div>
       </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames/bind';
 
 import styles from './AcountItem.module.scss';
-import images from '~/assets/images';
+import { CheckIcon } from '~/components/Icons';
 
 const cx = classNames.bind(styles);
 
@@ -17,7 +17,7 @@ const AccountItem = () => {
         <h4 className={cx('username')}>
           F8 official{' '}
           <span className={cx('check')}>
-            <img src={images.check} alt="" />
+            <CheckIcon></CheckIcon>
           </span>
         </h4>
         <span className={cx('fullname')}>Vũ Văn A</span>

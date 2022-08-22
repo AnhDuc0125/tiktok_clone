@@ -17,10 +17,6 @@
   padding: 0 24px 0 20px;
 }
 
-.logo {
-  align-self: flex-end;
-}
-
 .search,
 .search-result {
   width: 361px;
@@ -31,6 +27,7 @@
   height: 46px;
   padding-left: 16px;
   display: flex;
+  align-items: center;
   background-color: var(--gray-bg-color);
   border-radius: var(--border-radius-search);
   border: 1px solid transparent;
@@ -104,12 +101,11 @@
 .action {
   display: flex;
   align-items: center;
-
-  img {
-    cursor: pointer;
-  }
 }
 
 .more-icon {
   margin-left: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }

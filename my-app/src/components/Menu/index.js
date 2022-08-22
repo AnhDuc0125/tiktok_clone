@@ -3,8 +3,6 @@ import classNames from 'classnames/bind';
 
 import styles from './Menu.module.scss';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
-import Button from '../Button';
-import images from '~/assets/images';
 import MenuItem from './MenuItem';
 
 const cx = classNames.bind(styles);
@@ -15,9 +13,11 @@ const Menu = ({ children, data = [] }) => {
       <MenuItem key={index} title={item.title} icon={item.icon}></MenuItem>
     ));
   };
+  console.log(children);
 
   return (
     <Tippy
+      offset={[20, 10]}
       delay={[0, 800]}
       interactive
       placement="bottom-end"
