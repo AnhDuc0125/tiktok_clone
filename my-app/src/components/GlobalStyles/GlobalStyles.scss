@@ -1,5 +1,5 @@
 @import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
 :root {
   --primary-color: #fe2c55;
@@ -8,6 +8,33 @@
 
   --default-layout-height-header: 60px;
   --default-layout-width: 1150px;
+}
+
+@font-face {
+  font-family: 'Sofia Pro';
+  src: url('../../assets/fonts/SofiaProLight.woff2') format('woff2'),
+    url('../../assets/fonts/SofiaProLight.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'VL Proxima Nova Th';
+  src: url('../../assets/fonts/VL-ProximaNovaT-Thin.woff2') format('woff2'),
+    url('../../assets/fonts/VL-ProximaNovaT-Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'VL Proxima Nova Rg';
+  src: url('../../assets/fonts/VL-ProximaNova-Bold.woff2') format('woff2'),
+    url('../../assets/fonts/VL-ProximaNova-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
 
 * {
@@ -21,7 +48,8 @@ html {
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'VL Proxima Nova Rg';
+  // font-family: 'Roboto', sans-serif;
   font-size: 1.6rem;
   line-height: 1.5;
   text-rendering: optimizeSpeed;
