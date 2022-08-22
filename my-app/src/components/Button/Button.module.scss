@@ -1,5 +1,96 @@
-.wrapper {
+.wrapper + .wrapper {
+  margin-left: 15px;
+}
+
+.wrapper,
+.medium {
   min-width: 100px;
   font-weight: 700;
   font-size: 1.6rem;
+  padding: 9px 16px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+
+  &.menu-item {
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.filled {
+  color: var(--white);
+  background-color: var(--primary-color);
+  border-color: currentColor;
+
+  &:hover {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)),
+      #fe2c55;
+  }
+}
+
+.outline {
+  color: var(--primary-color);
+  background: none;
+  border-color: var(--primary-color);
+
+  &:hover {
+    background-color: rgba(254, 44, 85, 0.06);
+  }
+}
+
+.round {
+  border-radius: 999px;
+}
+
+.small {
+  min-width: 88px;
+  font-weight: 600;
+  padding: 4px 16px;
+}
+
+.large,
+.max {
+  font-weight: 700;
+  padding: 14px 16px;
+}
+
+.large {
+  min-width: 150px;
+}
+
+.full {
+  width: 100%;
+}
+
+.secondaryColor {
+  color: var(--gray-text-color);
+  border-color: #0000001f;
+
+  &:hover {
+    background-color: rgba(22, 24, 35, 0.03);
+  }
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.before-icon,
+.after-icon {
+  height: 20px;
+}
+
+.before-icon + span,
+span + .after-icon {
+  margin-left: 5px;
+}
+
+.menu-item {
+  border-radius: 0;
+  padding: 10px 16px;
+  &:hover {
+    background-color: rgba(22, 24, 35, 0.03);
+  }
 }

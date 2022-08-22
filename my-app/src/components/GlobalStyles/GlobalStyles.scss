@@ -5,6 +5,9 @@
   --primary-color: #fe2c55;
   --gray-bg-color: #f1f1f2;
   --gray-text-color: #161823bf;
+  --black-text-color: #161823;
+  --white: #fff;
+  --black: #000;
 
   --default-layout-height-header: 60px;
   --default-layout-width: 1150px;
@@ -49,7 +52,6 @@ html {
 
 body {
   font-family: 'VL Proxima Nova Rg';
-  // font-family: 'Roboto', sans-serif;
   font-size: 1.6rem;
   line-height: 1.5;
   text-rendering: optimizeSpeed;
@@ -57,9 +59,15 @@ body {
 
 button,
 input {
+  font-family: 'VL Proxima Nova Rg';
   border: none;
   outline: none;
   background: transparent;
+}
+
+button {
+  cursor: pointer;
+  user-select: none;
 }
 
 a {

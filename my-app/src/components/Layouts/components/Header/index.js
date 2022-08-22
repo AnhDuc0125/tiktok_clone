@@ -1,25 +1,36 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react/headless';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './Header.module.scss';
 import images from '~/assets/images';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
+import Menu from '~/components/Menu';
 
 const cx = classNames.bind(styles);
-
-console.log(images.logo);
 
 function Header() {
   const [resultSearch, setResultSearch] = useState([]);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setResultSearch([1, 2, 3]);
-    }, 0);
-  }, []);
+  const MENU_ITEM = [
+    {
+      icon: <img src={images.language} alt="" />,
+      title: 'English',
+    },
+    {
+      icon: <img src={images.feedback} alt="" />,
+      title: 'Feedback and help',
+      to: '/feedback',
+    },
+    {
+      icon: <img src={images.keyboard} alt="" />,
+      title: 'Keyboard shortcuts',
+    },
+  ];
 
   return (
     <header className={cx('wrapper')}>
@@ -59,7 +70,17 @@ function Header() {
           </Tippy>
         </div>
         <div className={cx('action')}>
-          <Button small>Log in</Button>
+          <Button
+            outline
+            beforeIcon={<FontAwesomeIcon icon={faPlus}></FontAwesomeIcon>}
+            secondaryColor
+          >
+            Upload
+          </Button>
+          <Button filled>Log in</Button>
+          <Menu data={MENU_ITEM}>
+            <img className={cx('more-icon')} src={images.more} alt="" />
+          </Menu>
         </div>
       </div>
     </header>
