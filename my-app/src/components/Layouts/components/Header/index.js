@@ -10,6 +10,7 @@ import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
 import * as Icon from '~/components/Icons';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
@@ -133,6 +134,7 @@ function Header() {
                 <span className={cx('icon-btn')}>
                   <Button className={cx('icon-btn')}>
                     <Icon.MessageBoxIcon></Icon.MessageBoxIcon>
+                    <sup className={cx('sup')}>12</sup>
                   </Button>
                 </span>
               </ToolTip>
@@ -148,9 +150,9 @@ function Header() {
           >
             {currentUser ? (
               <div className={cx('user-avatar')}>
-                <img
+                <Image
                   src="https://www.dungplus.com/wp-content/uploads/2019/12/girl-xinh-1-480x600.jpg"
-                  alt="Avatar"
+                  alt="User's avatar"
                 />
               </div>
             ) : (

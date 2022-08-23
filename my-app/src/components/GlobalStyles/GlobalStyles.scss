@@ -13,31 +13,26 @@
   --default-layout-width: 1150px;
 }
 
+//fonts
 @font-face {
-  font-family: 'Sofia Pro';
-  src: url('../../assets/fonts/SofiaProLight.woff2') format('woff2'),
-    url('../../assets/fonts/SofiaProLight.woff') format('woff');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
+  font-family: 'ProximaNova';
+  src: url('/assets/fonts/Proxima-Nova-Regular.woff2');
+  font-weight: 400;
 }
-
 @font-face {
-  font-family: 'VL Proxima Nova Th';
-  src: url('../../assets/fonts/VL-ProximaNovaT-Thin.woff2') format('woff2'),
-    url('../../assets/fonts/VL-ProximaNovaT-Thin.woff') format('woff');
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
+  font-family: 'ProximaNova';
+  src: url('/assets/fonts/Proxima-Nova-Semibold.woff2');
+  font-weight: 600;
 }
-
 @font-face {
-  font-family: 'VL Proxima Nova Rg';
-  src: url('../../assets/fonts/VL-ProximaNova-Bold.woff2') format('woff2'),
-    url('../../assets/fonts/VL-ProximaNova-Bold.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
+  font-family: 'ProximaNova';
+  src: url('/assets/fonts/Proxima-Nova-Bold.woff2');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'SofiaPro';
+  src: url('/assets/fonts/sofiapro-bold.woff2');
+  font-weight: 700;
 }
 
 * {
@@ -56,7 +51,7 @@ html {
 }
 
 body {
-  font-family: 'VL Proxima Nova Rg';
+  font-family: 'ProximaNova';
   font-size: 1.6rem;
   line-height: 1.5;
   text-rendering: optimizeSpeed;
@@ -64,7 +59,7 @@ body {
 
 button,
 input {
-  font-family: 'VL Proxima Nova Rg';
+  font-family: 'ProximaNova';
   border: none;
   outline: none;
   background: transparent;
@@ -79,4 +74,10 @@ button {
 
 a {
   text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
