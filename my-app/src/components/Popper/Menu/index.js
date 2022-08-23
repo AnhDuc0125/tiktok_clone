@@ -21,6 +21,7 @@ const Menu = ({ children, data = [], onChange }) => {
           key={index}
           title={item.title}
           icon={item.icon}
+          separate={item.separate}
           onClick={() => {
             if (isParent) {
               setHistory((prev) => [...prev, item.children]);
@@ -36,7 +37,7 @@ const Menu = ({ children, data = [], onChange }) => {
   return (
     <Tippy
       interactive
-      offset={[20, 10]}
+      offset={[20, 3]}
       delay={[0, 800]}
       placement="bottom-end"
       render={(attrs) => (

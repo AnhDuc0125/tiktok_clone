@@ -1,3 +1,9 @@
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .wrapper + .wrapper {
   margin-left: 15px;
 }
@@ -61,6 +67,11 @@
   min-width: 150px;
 }
 
+.fitContent {
+  min-width: 32px;
+  padding: 0;
+}
+
 .full {
   width: 100%;
 }
@@ -86,13 +97,5 @@
 
 .before-icon + span,
 span + .after-icon {
-  margin-left: 5px;
-}
-
-.menu-item {
-  border-radius: 0;
-  padding: 10px 16px;
-  &:hover {
-    background-color: rgba(22, 24, 35, 0.03);
-  }
+  margin-left: 8px;
 }

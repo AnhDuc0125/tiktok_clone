@@ -60,7 +60,7 @@ const Button = ({
   return (
     <Component className={passClassName} {..._props}>
       {beforeIcon && <span className={cx('before-icon')}>{beforeIcon}</span>}
-      <span>{children}</span>
+      <span className={cx('content')}>{children}</span>
       {afterIcon && <span className={cx('after-icon')}>{afterIcon}</span>}
     </Component>
   );

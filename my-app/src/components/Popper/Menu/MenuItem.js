@@ -5,14 +5,13 @@ import Button from '../../Button';
 
 const cx = classNames.bind(styles);
 
-const MenuItem = ({ title, icon, onClick }) => {
+const MenuItem = ({ title, icon, separate, onClick }) => {
+  const classes = cx('menu-item', {
+    separate,
+  });
+
   return (
-    <Button
-      full
-      className={cx('menu-item')}
-      beforeIcon={icon}
-      onClick={onClick}
-    >
+    <Button full className={classes} beforeIcon={icon} onClick={onClick}>
       {title}
     </Button>
   );

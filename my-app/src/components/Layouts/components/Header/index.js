@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react/headless';
+import ToolTip from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
 
 import styles from './Header.module.scss';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
@@ -13,6 +15,8 @@ const cx = classNames.bind(styles);
 
 function Header() {
   const [resultSearch, setResultSearch] = useState([]);
+
+  const currentUser = true;
 
   const MENU_ITEM = [
     {
@@ -43,7 +47,26 @@ function Header() {
     },
   ];
 
-  const currentUser = false;
+  const MENU_USER = [
+    {
+      icon: <Icon.ProfileIcon />,
+      title: 'View profile',
+    },
+    {
+      icon: <Icon.CoinIcon />,
+      title: 'Get coins',
+    },
+    {
+      icon: <Icon.SettingIcon />,
+      title: 'Settings',
+    },
+    ...MENU_ITEM,
+    {
+      icon: <Icon.LogOutIcon />,
+      title: 'Log out',
+      separate: true,
+    },
+  ];
 
   const handleChangeMenu = (menuItem) => {
     console.log(menuItem);
@@ -99,23 +122,43 @@ function Header() {
 
           {currentUser ? (
             <>
-              <button>
-                <Icon.SendMessageIcon></Icon.SendMessageIcon>
-              </button>
-              <button>
-                <Icon.MessageBoxIcon></Icon.MessageBoxIcon>
-              </button>
+              <ToolTip content="Messages" duration={0}>
+                <span className={cx('icon-btn')}>
+                  <Button>
+                    <Icon.SendMessageIcon></Icon.SendMessageIcon>
+                  </Button>
+                </span>
+              </ToolTip>
+              <ToolTip content="Inbox" duration={0}>
+                <span className={cx('icon-btn')}>
+                  <Button className={cx('icon-btn')}>
+                    <Icon.MessageBoxIcon></Icon.MessageBoxIcon>
+                  </Button>
+                </span>
+              </ToolTip>
             </>
           ) : (
             <>
               <Button filled>Log in</Button>
-              <Menu data={MENU_ITEM} onChange={handleChangeMenu}>
-                <div className={cx('more-icon')}>
-                  <Icon.MoreIcon />
-                </div>
-              </Menu>
             </>
           )}
+          <Menu
+            data={currentUser ? MENU_USER : MENU_ITEM}
+            onChange={handleChangeMenu}
+          >
+            {currentUser ? (
+              <div className={cx('user-avatar')}>
+                <img
+                  src="https://www.dungplus.com/wp-content/uploads/2019/12/girl-xinh-1-480x600.jpg"
+                  alt="Avatar"
+                />
+              </div>
+            ) : (
+              <div className={cx('more-icon')}>
+                <Icon.MoreIcon />
+              </div>
+            )}
+          </Menu>
         </div>
       </div>
     </header>
