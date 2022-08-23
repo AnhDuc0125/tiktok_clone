@@ -1,14 +1,12 @@
 import { useState } from 'react';
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react/headless';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './Header.module.scss';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
-import Menu from '~/components/Menu';
+import Menu from '~/components/Popper/Menu';
 import * as Icon from '~/components/Icons';
 
 const cx = classNames.bind(styles);
@@ -20,6 +18,19 @@ function Header() {
     {
       icon: <Icon.LanguageIcon />,
       title: 'English',
+      children: {
+        heading: 'Language',
+        data: [
+          {
+            code: 'en',
+            title: 'English',
+          },
+          {
+            code: 'vi',
+            title: 'Tiếng Việt',
+          },
+        ],
+      },
     },
     {
       icon: <Icon.FeedbackIcon />,
@@ -32,12 +43,19 @@ function Header() {
     },
   ];
 
+  const currentUser = false;
+
+  const handleChangeMenu = (menuItem) => {
+    console.log(menuItem);
+  };
+
   return (
     <header className={cx('wrapper')}>
       <div className={cx('inner')}>
         <div className={cx('logo')}>
           <Icon.Logo></Icon.Logo>
         </div>
+
         <div>
           <Tippy
             interactive
@@ -69,20 +87,35 @@ function Header() {
             </div>
           </Tippy>
         </div>
+
         <div className={cx('action')}>
           <Button
             outline
-            beforeIcon={<FontAwesomeIcon icon={faPlus}></FontAwesomeIcon>}
+            beforeIcon={<Icon.PlusIcon></Icon.PlusIcon>}
             secondaryColor
           >
             Upload
           </Button>
-          <Button filled>Log in</Button>
-          <Menu data={MENU_ITEM}>
-            <div className={cx('more-icon')}>
-              <Icon.MoreIcon />
-            </div>
-          </Menu>
+
+          {currentUser ? (
+            <>
+              <button>
+                <Icon.SendMessageIcon></Icon.SendMessageIcon>
+              </button>
+              <button>
+                <Icon.MessageBoxIcon></Icon.MessageBoxIcon>
+              </button>
+            </>
+          ) : (
+            <>
+              <Button filled>Log in</Button>
+              <Menu data={MENU_ITEM} onChange={handleChangeMenu}>
+                <div className={cx('more-icon')}>
+                  <Icon.MoreIcon />
+                </div>
+              </Menu>
+            </>
+          )}
         </div>
       </div>
     </header>
