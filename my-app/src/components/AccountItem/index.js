@@ -3,24 +3,22 @@ import classNames from 'classnames/bind';
 
 import styles from './AcountItem.module.scss';
 import { CheckIcon } from '~/components/Icons';
+import Image from '../Image';
 
 const cx = classNames.bind(styles);
 
-const AccountItem = () => {
+const AccountItem = ({ data }) => {
   return (
     <div className={cx('wrapper')}>
-      <img
-        src="https://www.dungplus.com/wp-content/uploads/2019/12/girl-xinh-1-480x600.jpg"
-        alt=""
-      />
+      <Image src={data.avatar} alt={data.nickname} />
       <div className={cx('info')}>
         <h4 className={cx('username')}>
-          F8 official{' '}
+          {data.nickname}{' '}
           <span className={cx('check')}>
-            <CheckIcon></CheckIcon>
+            {data.tick && <CheckIcon></CheckIcon>}
           </span>
         </h4>
-        <span className={cx('fullname')}>Vũ Văn A</span>
+        <span className={cx('fullname')}>{data.full_name}</span>
       </div>
     </div>
   );
