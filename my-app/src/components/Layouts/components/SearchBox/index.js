@@ -74,6 +74,7 @@ const SearchBox = () => {
             className={cx('seach-input')}
             value={searchValue}
             onChange={(e) => {
+              if (e.target.value === ' ') return;
               setSearchValue(e.target.value);
             }}
             onFocus={() => handleShowResult(true)}
