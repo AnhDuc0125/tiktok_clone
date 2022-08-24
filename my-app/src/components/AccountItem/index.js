@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames/bind';
+import { Link } from 'react-router-dom';
 
 import styles from './AcountItem.module.scss';
 import { CheckIcon } from '~/components/Icons';
@@ -9,7 +10,7 @@ const cx = classNames.bind(styles);
 
 const AccountItem = ({ data }) => {
   return (
-    <div className={cx('wrapper')}>
+    <Link to={`/@${data.nickname}`} className={cx('wrapper')}>
       <Image src={data.avatar} alt={data.nickname} />
       <div className={cx('info')}>
         <h4 className={cx('username')}>
@@ -20,7 +21,7 @@ const AccountItem = ({ data }) => {
         </h4>
         <span className={cx('fullname')}>{data.full_name}</span>
       </div>
-    </div>
+    </Link>
   );
 };
 

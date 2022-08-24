@@ -66,6 +66,19 @@
   object-fit: cover;
 }
 
+.spinner {
+  animation: loading 2s linear infinite;
+}
+
+@keyframes loading {
+  from {
+    transform: translateY(-50%) rotate(0);
+  }
+  to {
+    transform: translateY(-50%) rotate(359deg);
+  }
+}
+
 .search-btn {
   position: relative;
   width: 52px;

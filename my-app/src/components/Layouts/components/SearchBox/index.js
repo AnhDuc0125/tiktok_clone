@@ -13,6 +13,7 @@ const SearchBox = () => {
   const [searchValue, setSearchValue] = useState('');
   const [resultSearch, setResultSearch] = useState([]);
   const [showResult, setShowResult] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const searchRef = useRef();
   const handleClearValue = () => {
@@ -27,15 +28,24 @@ const SearchBox = () => {
 
   useEffect(() => {
     if (!searchValue.trim()) {
+      setResultSearch([]);
       return;
     }
 
+    setLoading(true);
+
     fetch(
-      `https://tiktok.fullstack.edu.vn/api/users/search?q=${searchValue}&type=less`
+      `https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(
+        searchValue
+      )}&type=less`
     )
       .then((res) => res.json())
       .then((result) => {
         setResultSearch(result.data);
+        setLoading(false);
+      })
+      .catch(() => {
+        setLoading(true);
       });
   }, [searchValue]);
 
@@ -62,6 +72,7 @@ const SearchBox = () => {
             type="text"
             placeholder="Search accounts and videos"
             spellCheck={false}
+            autoComplete="off"
             className={cx('seach-input')}
             value={searchValue}
             onChange={(e) => {
@@ -69,12 +80,12 @@ const SearchBox = () => {
             }}
             onFocus={() => handleShowResult(true)}
           />
-          {searchValue && (
+          {searchValue && !loading && (
             <button className={cx('clear')} onClick={handleClearValue}>
               <Icon.TimesIcon />
             </button>
           )}
-          {/* <Icon.LoadingIcon className={cx('spinner')} /> */}
+          {loading && <Icon.LoadingIcon className={cx('spinner')} />}
           <button className={cx('search-btn')}>
             <Icon.SearchIcon></Icon.SearchIcon>
           </button>
