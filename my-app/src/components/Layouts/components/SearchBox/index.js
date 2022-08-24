@@ -2,11 +2,12 @@ import { useEffect, useRef, useState } from 'react';
 import Tippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 
-import styles from './SearchBox.module.scss';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import * as Icon from '~/components/Icons';
+import styles from './SearchBox.module.scss';
 import { useDebound } from '~/hooks';
+import * as searchService from '~/apiServices/searchServices';
 
 const cx = classNames.bind(styles);
 
@@ -35,21 +36,15 @@ const SearchBox = () => {
       return;
     }
 
-    setLoading(true);
+    const fetchApi = async () => {
+      setLoading(true);
+      const result = await searchService.search(deboundValue);
 
-    fetch(
-      `https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(
-        deboundValue
-      )}&type=less`
-    )
-      .then((res) => res.json())
-      .then((result) => {
-        setResultSearch(result.data);
-        setLoading(false);
-      })
-      .catch(() => {
-        setLoading(true);
-      });
+      setResultSearch(result);
+      setLoading(false);
+    };
+
+    fetchApi();
   }, [deboundValue]);
 
   return (
