@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import ToolTip from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
+import { Link } from 'react-router-dom';
 
 import styles from './Header.module.scss';
 import Button from '~/components/Button';
@@ -71,9 +72,9 @@ function Header() {
   return (
     <header className={cx('wrapper')}>
       <div className={cx('inner')}>
-        <div className={cx('logo')}>
+        <Link to={'/'} className={cx('logo')}>
           <Icon.Logo></Icon.Logo>
-        </div>
+        </Link>
 
         <SearchBox />
 

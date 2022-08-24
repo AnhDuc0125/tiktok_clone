@@ -6,6 +6,7 @@ import styles from './SearchBox.module.scss';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import * as Icon from '~/components/Icons';
+import { useDebound } from '~/hooks';
 
 const cx = classNames.bind(styles);
 
@@ -14,6 +15,8 @@ const SearchBox = () => {
   const [resultSearch, setResultSearch] = useState([]);
   const [showResult, setShowResult] = useState(true);
   const [loading, setLoading] = useState(false);
+
+  const deboundValue = useDebound(searchValue, 500);
 
   const searchRef = useRef();
   const handleClearValue = () => {
@@ -27,7 +30,7 @@ const SearchBox = () => {
   };
 
   useEffect(() => {
-    if (!searchValue.trim()) {
+    if (!deboundValue.trim()) {
       setResultSearch([]);
       return;
     }
@@ -36,7 +39,7 @@ const SearchBox = () => {
 
     fetch(
       `https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(
-        searchValue
+        deboundValue
       )}&type=less`
     )
       .then((res) => res.json())
@@ -47,7 +50,7 @@ const SearchBox = () => {
       .catch(() => {
         setLoading(true);
       });
-  }, [searchValue]);
+  }, [deboundValue]);
 
   return (
     <div>
