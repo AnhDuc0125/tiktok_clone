@@ -37,6 +37,7 @@ const Menu = ({ children, data = [], onChange }) => {
   return (
     <Tippy
       interactive
+      hideOnClick="toggle"
       offset={[20, 3]}
       delay={[0, 800]}
       placement="bottom-end"

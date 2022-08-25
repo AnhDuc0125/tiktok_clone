@@ -8,6 +8,8 @@
   --white: #fff;
   --black: #000;
 
+  --primary-font: 'ProximaNova';
+
   --default-layout-height-header: 60px;
   --default-layout-width: 1150px;
 }
@@ -50,7 +52,7 @@ html {
 }
 
 body {
-  font-family: 'ProximaNova';
+  font-family: var(--primary-font);
   font-size: 1.6rem;
   line-height: 1.5;
   text-rendering: optimizeSpeed;
@@ -58,7 +60,7 @@ body {
 
 button,
 input {
-  font-family: 'ProximaNova';
+  font-family: var(--primary-font);
   border: none;
   outline: none;
   background: transparent;

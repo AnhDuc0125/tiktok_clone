@@ -30,6 +30,12 @@ const SearchBox = () => {
     setShowResult(boolean);
   };
 
+  const handleChange = (e) => {
+    const searchValue = e.target.value;
+    if (searchValue.startsWith(' ')) return;
+    setSearchValue(searchValue);
+  };
+
   useEffect(() => {
     if (!deboundValue.trim()) {
       setResultSearch([]);
@@ -73,10 +79,7 @@ const SearchBox = () => {
             autoComplete="off"
             className={cx('seach-input')}
             value={searchValue}
-            onChange={(e) => {
-              if (e.target.value === ' ') return;
-              setSearchValue(e.target.value);
-            }}
+            onChange={handleChange}
             onFocus={() => handleShowResult(true)}
           />
           {searchValue && !loading && (
@@ -85,7 +88,10 @@ const SearchBox = () => {
             </button>
           )}
           {loading && <Icon.LoadingIcon className={cx('spinner')} />}
-          <button className={cx('search-btn')}>
+          <button
+            className={cx('search-btn')}
+            onMouseDown={(e) => e.preventDefault()}
+          >
             <Icon.SearchIcon></Icon.SearchIcon>
           </button>
         </div>
