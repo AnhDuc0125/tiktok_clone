@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import PropTypes from 'prop-types';
 
 import styles from './Menu.module.scss';
 import Button from '../../Button';
@@ -16,6 +17,13 @@ const MenuItem = ({ title, icon, separate, onClick }) => {
       {title}
     </Button>
   );
+};
+
+MenuItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  icon: PropTypes.node,
+  separate: PropTypes.bool,
+  onClick: PropTypes.func,
 };
 
 export default MenuItem;

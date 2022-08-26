@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import styles from './AcountItem.module.scss';
 import { CheckIcon } from '~/components/Icons';
@@ -23,6 +24,10 @@ const AccountItem = ({ data }) => {
       </div>
     </Link>
   );
+};
+
+AccountItem.propTypes = {
+  data: PropTypes.object.isRequired,
 };
 
 export default AccountItem;

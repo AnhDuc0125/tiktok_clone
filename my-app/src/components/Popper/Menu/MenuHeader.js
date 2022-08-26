@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
-import * as Icon from '../../Icons';
+import PropTypes from 'prop-types';
 
+import * as Icon from '../../Icons';
 import styles from './Menu.module.scss';
 
 const cx = classNames.bind(styles);
@@ -14,6 +15,11 @@ const MenuHeader = ({ heading, onBack }) => {
       <h3 className={cx('header-title')}>{heading}</h3>
     </div>
   );
+};
+
+MenuHeader.propTypes = {
+  heading: PropTypes.string.isRequired,
+  onBack: PropTypes.func.isRequired,
 };
 
 export default MenuHeader;

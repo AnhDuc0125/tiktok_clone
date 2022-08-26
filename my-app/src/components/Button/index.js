@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import styles from './Button.module.scss';
 
@@ -64,6 +65,25 @@ const Button = ({
       {afterIcon && <span className={cx('after-icon')}>{afterIcon}</span>}
     </Component>
   );
+};
+
+Button.propTypes = {
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+  to: PropTypes.string,
+  href: PropTypes.string,
+  disabled: PropTypes.bool,
+  secondaryColor: PropTypes.bool,
+  filled: PropTypes.bool,
+  outline: PropTypes.bool,
+  round: PropTypes.bool,
+  small: PropTypes.bool,
+  medium: PropTypes.bool,
+  large: PropTypes.bool,
+  full: PropTypes.bool,
+  beforeIcon: PropTypes.node,
+  afterIcon: PropTypes.node,
+  onClick: PropTypes.func,
 };
 
 export default Button;
