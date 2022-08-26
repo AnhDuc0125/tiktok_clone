@@ -1,5 +1,1 @@
-function Profile() {
-  return <div>Profile page</div>;
-}
-
-export default Profile;
+export { default } from './Profile';

@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 
 import styles from './Menu.module.scss';
-import Button from '../../Button';
+import Button from '../../Button/Button';
 
 const cx = classNames.bind(styles);
 
