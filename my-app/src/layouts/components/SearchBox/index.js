@@ -7,7 +7,7 @@ import AccountItem from '~/components/AccountItem';
 import * as Icon from '~/components/Icons';
 import styles from './SearchBox.module.scss';
 import { useDebound } from '~/hooks';
-import * as searchService from '~/apiServices/searchServices';
+import * as searchService from '~/services/searchService';
 
 const cx = classNames.bind(styles);
 

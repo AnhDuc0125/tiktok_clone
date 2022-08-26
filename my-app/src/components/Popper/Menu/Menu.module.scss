@@ -1,7 +1,7 @@
 //Menu Header
 .menu-header {
   width: 100%;
-  padding: 10px 16px;
+  padding: 14px 16px;
   position: relative;
   margin-top: -8px;
 }
@@ -17,6 +17,19 @@
 
 .header-title {
   text-align: center;
+  font-size: 1.6rem;
+}
+
+.menu-body {
+  width: 100%;
+  overflow-y: auto;
+
+  .menu-text {
+    font-family: 'SofiaPro';
+    color: rgba(22, 24, 35, 1);
+    font-weight: 400;
+    font-weight: 1.4rem;
+  }
 }
 
 // Menu Item

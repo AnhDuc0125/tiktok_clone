@@ -35,6 +35,11 @@
   src: url('/assets/fonts/sofiapro-bold.woff2');
   font-weight: 700;
 }
+@font-face {
+  font-family: 'SofiaPro';
+  src: url('/assets/fonts/sofiapro-regular.woff');
+  font-weight: 400;
+}
 
 * {
   margin: 0;
@@ -46,16 +51,43 @@ html {
   font-size: 62.5%;
 }
 
-//hide scrollbar
-::-webkit-scrollbar {
-  display: none;
-}
-
 body {
   font-family: var(--primary-font);
   font-size: 1.6rem;
   line-height: 1.5;
   text-rendering: optimizeSpeed;
+  overflow-y: overlay;
+}
+
+//scrollbar css
+html *::-webkit-scrollbar {
+  border-radius: 0;
+  width: 8px;
+}
+
+html *::-webkit-scrollbar {
+  border-radius: 0;
+  width: 8px;
+}
+
+html *::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+html *::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+html *::-webkit-scrollbar-track {
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+html *::-webkit-scrollbar-track {
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 button,

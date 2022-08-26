@@ -9,6 +9,7 @@ import Menu from '~/components/Popper/Menu';
 import * as Icon from '~/components/Icons';
 import Image from '~/components/Image';
 import SearchBox from '../SearchBox';
+import config from '~/configs';
 
 const cx = classNames.bind(styles);
 
@@ -72,7 +73,7 @@ function Header() {
   return (
     <header className={cx('wrapper')}>
       <div className={cx('inner')}>
-        <Link to={'/'} className={cx('logo')}>
+        <Link to={config.route.home} className={cx('logo')}>
           <Icon.Logo></Icon.Logo>
         </Link>
 

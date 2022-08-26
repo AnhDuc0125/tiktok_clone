@@ -8,6 +8,7 @@ const cx = classNames.bind(styles);
 const MenuItem = ({ title, icon, separate, onClick }) => {
   const classes = cx('menu-item', {
     separate,
+    'menu-text': !icon,
   });
 
   return (
