@@ -1,4 +1,4 @@
-const LanguageIcon = () => {
+const Language = () => {
   return (
     <svg
       className="css-g0144v"
@@ -17,4 +17,4 @@ const LanguageIcon = () => {
   );
 };
 
-export default LanguageIcon;
+export default Language;

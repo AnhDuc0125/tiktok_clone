@@ -1,4 +1,4 @@
-const CoinIcon = () => {
+const Coin = () => {
   return (
     <svg
       className="css-g0144v"
@@ -22,4 +22,4 @@ const CoinIcon = () => {
   );
 };
 
-export default CoinIcon;
+export default Coin;

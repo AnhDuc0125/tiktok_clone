@@ -1,7 +1,7 @@
-const BackIcon = () => {
+const Back = () => {
   return (
     <svg
-      className="tiktok-1yec0eg-StyledBackIcon e1xkydcv2"
+      className="tiktok-1yec0eg-StyledBack e1xkydcv2"
       width="20"
       height="20"
       viewBox="0 0 48 48"
@@ -17,4 +17,4 @@ const BackIcon = () => {
   );
 };
 
-export default BackIcon;
+export default Back;

@@ -1,4 +1,4 @@
-const SettingIcon = () => {
+const Setting = () => {
   return (
     <svg
       className="css-g0144v"
@@ -17,4 +17,4 @@ const SettingIcon = () => {
   );
 };
 
-export default SettingIcon;
+export default Setting;

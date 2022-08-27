@@ -84,15 +84,12 @@ const SearchBox = () => {
           />
           {searchValue && !loading && (
             <button className={cx('clear')} onClick={handleClearValue}>
-              <Icon.TimesIcon />
+              <Icon.Times />
             </button>
           )}
-          {loading && <Icon.LoadingIcon className={cx('spinner')} />}
-          <button
-            className={cx('search-btn')}
-            onMouseDown={(e) => e.preventDefault()}
-          >
-            <Icon.SearchIcon></Icon.SearchIcon>
+          {loading && <Icon.Loading className={cx('spinner')} />}
+          <button className={cx('search-btn')} onMouseDown={(e) => e.preventDefault()}>
+            <Icon.Search></Icon.Search>
           </button>
         </div>
       </Tippy>

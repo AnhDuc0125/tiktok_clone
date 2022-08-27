@@ -1,4 +1,4 @@
-const KeyboardIcon = () => {
+const Keyboard = () => {
   return (
     <svg
       className="css-g0144v"
@@ -17,4 +17,4 @@ const KeyboardIcon = () => {
   );
 };
 
-export default KeyboardIcon;
+export default Keyboard;

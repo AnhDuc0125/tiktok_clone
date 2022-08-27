@@ -10,7 +10,7 @@ const MenuHeader = ({ heading, onBack }) => {
   return (
     <div className={cx('menu-header')}>
       <span className={cx('header-back')} onClick={onBack}>
-        <Icon.BackIcon></Icon.BackIcon>
+        <Icon.Back></Icon.Back>
       </span>
       <h3 className={cx('header-title')}>{heading}</h3>
     </div>

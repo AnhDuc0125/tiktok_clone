@@ -1,4 +1,4 @@
-const LoadingIcon = ({ className }) => {
+const Loading = ({ className }) => {
   return (
     <svg
       className={className}
@@ -17,4 +17,4 @@ const LoadingIcon = ({ className }) => {
   );
 };
 
-export default LoadingIcon;
+export default Loading;

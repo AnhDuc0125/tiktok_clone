@@ -1,12 +1,6 @@
-const TimesIcon = () => {
+const Times = () => {
   return (
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 48 48"
-      fill="rgba(22, 24, 35, 0.34)"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg width="16" height="16" viewBox="0 0 48 48" fill="rgba(22, 24, 35, 0.34)" xmlns="http://www.w3.org/2000/svg">
       <path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -16,4 +10,4 @@ const TimesIcon = () => {
   );
 };
 
-export default TimesIcon;
+export default Times;

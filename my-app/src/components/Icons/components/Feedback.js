@@ -1,4 +1,4 @@
-const FeedbackIcon = () => {
+const Feedback = () => {
   return (
     <svg
       className="css-g0144v"
@@ -17,4 +17,4 @@ const FeedbackIcon = () => {
   );
 };
 
-export default FeedbackIcon;
+export default Feedback;

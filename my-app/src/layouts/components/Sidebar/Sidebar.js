@@ -5,6 +5,8 @@ import config from '~/configs';
 import * as Icon from '~/components/Icons';
 import Nav from './Nav';
 import NavItem from './NavItem';
+import AccountItem from './AccountItem';
+import AccountsBlock from './AccountsBlock';
 
 const cx = classNames.bind(styles);
 
@@ -22,6 +24,20 @@ function Sidebar() {
           />
           <NavItem to={config.route.live} title={'LIVE'} icon={<Icon.Live />} activedIcon={<Icon.ActivedLive />} />
         </Nav>
+        <AccountsBlock label={'Suggested accounts'}>
+          <AccountItem></AccountItem>
+          <AccountItem></AccountItem>
+          <AccountItem></AccountItem>
+          <AccountItem></AccountItem>
+          <AccountItem></AccountItem>
+        </AccountsBlock>
+        <AccountsBlock label={'Following accounts'}>
+          <AccountItem></AccountItem>
+          <AccountItem></AccountItem>
+          <AccountItem></AccountItem>
+          <AccountItem></AccountItem>
+          <AccountItem></AccountItem>
+        </AccountsBlock>
       </div>
     </aside>
   );

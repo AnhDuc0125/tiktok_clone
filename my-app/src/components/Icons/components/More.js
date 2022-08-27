@@ -1,4 +1,4 @@
-const MoreIcon = ({ className }) => {
+const More = ({ className }) => {
   return (
     <svg
       className={className}
@@ -17,4 +17,4 @@ const MoreIcon = ({ className }) => {
   );
 };
 
-export default MoreIcon;
+export default More;

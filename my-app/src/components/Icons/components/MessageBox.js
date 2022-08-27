@@ -1,7 +1,7 @@
-const MessageBoxIcon = () => {
+const MessageBox = () => {
   return (
     <svg
-      className="tiktok-1g0p6jv-StyledInboxIcon e18kkhh41"
+      className="tiktok-1g0p6jv-StyledInbox e18kkhh41"
       width="32"
       height="32"
       viewBox="0 0 32 32"
@@ -17,4 +17,4 @@ const MessageBoxIcon = () => {
   );
 };
 
-export default MessageBoxIcon;
+export default MessageBox;

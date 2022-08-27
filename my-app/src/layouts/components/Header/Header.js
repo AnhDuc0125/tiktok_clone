@@ -18,7 +18,7 @@ function Header() {
 
   const MENU_ITEM = [
     {
-      icon: <Icon.LanguageIcon />,
+      icon: <Icon.Language />,
       title: 'English',
       children: {
         heading: 'Language',
@@ -35,32 +35,32 @@ function Header() {
       },
     },
     {
-      icon: <Icon.FeedbackIcon />,
+      icon: <Icon.Feedback />,
       title: 'Feedback and help',
       to: '/feedback',
     },
     {
-      icon: <Icon.KeyboardIcon />,
+      icon: <Icon.Keyboard />,
       title: 'Keyboard shortcuts',
     },
   ];
 
   const MENU_USER = [
     {
-      icon: <Icon.ProfileIcon />,
+      icon: <Icon.Profile />,
       title: 'View profile',
     },
     {
-      icon: <Icon.CoinIcon />,
+      icon: <Icon.Coin />,
       title: 'Get coins',
     },
     {
-      icon: <Icon.SettingIcon />,
+      icon: <Icon.Setting />,
       title: 'Settings',
     },
     ...MENU_ITEM,
     {
-      icon: <Icon.LogOutIcon />,
+      icon: <Icon.LogOut />,
       title: 'Log out',
       separate: true,
     },
@@ -80,11 +80,7 @@ function Header() {
         <SearchBox />
 
         <div className={cx('action')}>
-          <Button
-            outline
-            beforeIcon={<Icon.PlusIcon></Icon.PlusIcon>}
-            secondaryColor
-          >
+          <Button outline beforeIcon={<Icon.Plus></Icon.Plus>} secondaryColor>
             Upload
           </Button>
 
@@ -93,14 +89,14 @@ function Header() {
               <ToolTip content="Messages" duration={0}>
                 <span className={cx('icon-btn')}>
                   <Button>
-                    <Icon.SendMessageIcon></Icon.SendMessageIcon>
+                    <Icon.SendMessage></Icon.SendMessage>
                   </Button>
                 </span>
               </ToolTip>
               <ToolTip content="Inbox" duration={0}>
                 <span className={cx('icon-btn')}>
                   <Button className={cx('icon-btn')}>
-                    <Icon.MessageBoxIcon></Icon.MessageBoxIcon>
+                    <Icon.MessageBox></Icon.MessageBox>
                     <sup className={cx('sup')}>12</sup>
                   </Button>
                 </span>
@@ -111,10 +107,7 @@ function Header() {
               <Button filled>Log in</Button>
             </>
           )}
-          <Menu
-            data={currentUser ? MENU_USER : MENU_ITEM}
-            onChange={handleChangeMenu}
-          >
+          <Menu data={currentUser ? MENU_USER : MENU_ITEM} onChange={handleChangeMenu}>
             {currentUser ? (
               <div className={cx('user-avatar')}>
                 <Image
@@ -124,7 +117,7 @@ function Header() {
               </div>
             ) : (
               <div className={cx('more-icon')}>
-                <Icon.MoreIcon />
+                <Icon.More />
               </div>
             )}
           </Menu>

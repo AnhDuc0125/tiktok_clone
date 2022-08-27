@@ -1,7 +1,7 @@
-const PlusIcon = () => {
+const Plus = () => {
   return (
     <svg
-      className="tiktok-qeydvm-StyledPlusIcon e18d3d944"
+      className="tiktok-qeydvm-StyledPlus e18d3d944"
       width="20"
       height="20"
       viewBox="0 0 16 16"
@@ -17,4 +17,4 @@ const PlusIcon = () => {
   );
 };
 
-export default PlusIcon;
+export default Plus;

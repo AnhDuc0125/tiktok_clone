@@ -1,7 +1,7 @@
-const SendMessageIcon = () => {
+const SendMessage = () => {
   return (
     <svg
-      className="tiktok-9oofjg-StyledIcon e1nx07zo1"
+      className="tiktok-9oofjg-Styled e1nx07zo1"
       width="24"
       height="24"
       viewBox="0 0 48 48"
@@ -17,4 +17,4 @@ const SendMessageIcon = () => {
   );
 };
 
-export default SendMessageIcon;
+export default SendMessage;

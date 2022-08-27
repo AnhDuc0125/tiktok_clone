@@ -1,4 +1,4 @@
-const ProfileIcon = () => {
+const Profile = () => {
   return (
     <svg
       className="css-g0144v"
@@ -17,4 +17,4 @@ const ProfileIcon = () => {
   );
 };
 
-export default ProfileIcon;
+export default Profile;

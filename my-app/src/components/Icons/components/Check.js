@@ -1,4 +1,4 @@
-const CheckIcon = () => {
+const Check = () => {
   return (
     <svg
       className="tiktok-shsbhf-StyledVerifyBadge e1aglo370"
@@ -19,4 +19,4 @@ const CheckIcon = () => {
   );
 };
 
-export default CheckIcon;
+export default Check;
