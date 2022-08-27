@@ -30,7 +30,7 @@ const publicRoutes = [
   {
     path: config.route.live,
     component: Live,
-    layout: HeaderOnly,
+    // layout: HeaderOnly,
   },
 ];
 

@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react/headless';
 
-import styles from './Sidebar.module.scss';
+import styles from './AccountsBlock.module.scss';
 import * as Icon from '~/components/Icons';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import Image from '~/components/Image';
@@ -12,6 +12,7 @@ const cx = classNames.bind(styles);
 const AccountItem = () => {
   return (
     <Tippy
+      interactive
       delay={[1000, 0]}
       offset={[-10, 0]}
       placement="bottom-start"

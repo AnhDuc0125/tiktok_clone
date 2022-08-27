@@ -21,3 +21,5 @@ export { default as Users } from './components/Users';
 export { default as ActivedUsers } from './components/ActivedUsers';
 export { default as Live } from './components/Live';
 export { default as ActivedLive } from './components/ActivedLive';
+export { default as Hashtag } from './components/Hashtag';
+export { default as Music } from './components/Music';
